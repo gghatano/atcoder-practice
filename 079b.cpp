@@ -16,9 +16,11 @@ int main(){
     //cerr << "i: " << i << ", ans: " << ans << endl;
   }
 
-  cout << ans << endl;
-
-    
+  if(N==1){
+    cout << 1 << endl;
+  } else {
+    cout << ans << endl;
+  }
 
 }
 

@@ -2,23 +2,37 @@
 using namespace std;
 
 int main(){
-  long N; cin >> N;
-
-  long ans;
-  long tmp1 = 2, tmp2 = 1;
+  string N;
+  cin >> N;
 
 
-  for(int i = 2; i <= N; i++){
-    ans = tmp1 + tmp2;
-    tmp1 = tmp2;
-    tmp2 = ans;
+  int n = N.size()-1;
 
-    //cerr << "i: " << i << ", ans: " << ans << endl;
+  for(int bit = 0; bit < (1<<n); bit++){
+
+    int ans = N[0] - '0';
+    string tmp;
+    tmp = tmp + N[0];
+
+    // 0 1 2
+    for(int i = 0; i < n; i++){
+      if(bit & (1<<i)){
+        ans += N[i+1] - '0';
+        tmp = tmp + "+" + N[i+1];
+      } else {
+        ans -= N[i+1] - '0';
+        tmp = tmp + "-" + N[i+1];
+      }
+    }
+
+    //cerr << ans << endl;
+
+    if(ans == 7){
+      cout << tmp << "=7" << endl;
+      break;
+    }
+
   }
-
-  cout << ans << endl;
-
-    
 
 }
 
