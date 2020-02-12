@@ -1,6 +1,5 @@
 target=$1
 
-rm ${target}
 
 echo "=== compile ==="
 g++ -std=c++11 -o $target $target.cpp
@@ -15,3 +14,5 @@ echo ""
 echo ""
 echo "=== stdout === "
 cat stdout.txt
+
+rm ${target}
