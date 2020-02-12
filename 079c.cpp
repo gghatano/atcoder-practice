@@ -25,7 +25,6 @@ int main(){
       }
     }
 
-    //cerr << ans << endl;
 
     if(ans == 7){
       cout << tmp << "=7" << endl;
